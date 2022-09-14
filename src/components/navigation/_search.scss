@@ -1,0 +1,76 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  font-family: $FiraSemiBold;
+  margin-left: 50px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+button,
+input {
+  border: none;
+  display: inline-block;
+  border-radius: 6px;
+  width: 110px;
+  
+}
+button {
+  padding: 3px 10px;
+  background-color: $RUNvert;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover{
+    background-color: lighten($RUNvert, 30%);
+
+  }
+}
+input {
+  width: 100%;
+  padding: 10px 10px;
+}
+.panier {
+  display: flex;
+  width: 28%;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+
+  label{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-transform: lowercase;
+    align-items: flex-start;
+    // width: 100px;
+    // margin-right: 20px;
+    color: $RUNwhite;
+    font-family: $FiraRegular;
+  }
+}
+.pictoCaddie{
+    position: absolute;
+    top: -7px;
+    right: 28px;
+    transform: scale(118%);
+}
+#nbreArticles{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -20%);
+    background: $RUNvert;
+    border-radius: 50%;
+    text-align: center;
+    color: $RUNbleufonce;
+}
