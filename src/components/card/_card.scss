@@ -66,3 +66,21 @@
     font-family: $FiraExtraBoldCondensed;
     color: $RUNbleufonce;
 }
+
+.infoShoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: uppercase;
+    align-items: flex-end;
+    background: orange;
+    align-self: flex-end;
+}
+.specShoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.infoPrice{
+    text-align: end;
+}

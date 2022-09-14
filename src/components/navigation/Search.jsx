@@ -10,8 +10,8 @@ const Search = () => {
   return (
     <div className="search">
       <div className="buttons">
-        <button onClick={()=> toggleModals('login')} type="btn">S'inscrire</button>
-        <button onClick={()=> toggleModals('register')} type="btn">Se connecter</button>
+        <button onClick={()=> toggleModals('login')} type="btn">Se connecter</button>
+        <button onClick={()=> toggleModals('register')} type="btn">S'enregistrer</button>
         <div className="panier">
           <label htmlFor="article">
             <span>Mon</span>

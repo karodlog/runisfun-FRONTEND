@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import { UserContext } from "../context/userContext";
 
-const Login = () => {
+const Register = () => {
   const { modalState, toggleModals } = useContext(UserContext);
 
   const [validation, setvalidation] = useState('');
@@ -16,11 +16,19 @@ const Login = () => {
   const handleForm = e =>{
     e.preventDefault()
 
+    if(inputs.current[1].value.length < 8){
+        setvalidation('8 caractères minimum svp')
+        return;
+    }
+    
   }
+
+  console.log(inputs);
+
 
   return (
     <>
-    {modalState.loginModal && (
+    {modalState.registerModal && (
 
     
       <div className="containerModal">
@@ -30,30 +38,50 @@ const Login = () => {
           <div className="modal">
             <div className="modal-content">
               <div className="modal-header">
-                <h3 className="title-modal">Se connecter</h3>
+                <h3 className="title-modal">S'enregistrer</h3>
                 <button onClick={()=> toggleModals('close')} id="btnClose" type="btn">
                   X
                 </button>
               </div>
               <div className="modal-body">
-                <form onSubmit={handleForm} className="login-form">
-                  <div className="containerLogin">
-                    <label htmlFor="loginEmail">Email</label>
+                <form onSubmit={handleForm} className="Register-form">
+                  <div className="containerRegister">
+                    <label htmlFor="RegisterEmail">Email</label>
                     <input ref={addInputs}
                       type="email"
                       name="email"
                       className="formControl"
-                      id="loginEmail"
+                      id="RegisterEmail"
                       placeholder="email"
                     />
+                    </div>
+                    <div className="containerRegister">
+                    <label htmlFor="firstname">Firstname</label>
+                    <input ref={addInputs}
+                      type="txt"
+                      name="firstname"
+                      className="formControl"
+                      id="firstname"
+                      placeholder="firstname"
+                    />
+                    </div>
+                    <div className="containerRegister">
+                    <label htmlFor="lastname">Lastname</label>
+                    <input ref={addInputs}
+                      type="txt"
+                      name="lastname"
+                      className="formControl"
+                      id="lastname"
+                      placeholder="lastname"
+                    />
                   </div>
-                  <div className="containerLogin">
-                    <label htmlFor="loginEPwd">Password</label>
+                  <div className="containerRegister">
+                    <label htmlFor="RegisterEPwd">Password</label>
                     <input ref={addInputs}
                       type="password"
                       name="pwd"
                       className="formControl"
-                      id="loginEPwd"
+                      id="RegisterEPwd"
                       placeholder="password"
                     />
                     <p className="txtValid" style={{ color: "red" }}>
@@ -71,4 +99,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

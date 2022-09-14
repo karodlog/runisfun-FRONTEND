@@ -10,6 +10,8 @@ import ShoesMan from "./pages/shoesMan/ShoesMan";
 import ShoesWoman from "./pages/shoesWoman/ShoesWoman";
 import Nav from "./components/navigation/Nav";
 import Login from "./components/login-register/Login";
+import Register from "./components/login-register/Register";
+import Footer from "./components/Footer/Footer";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -19,6 +21,7 @@ function App() {
     <BrowserRouter>
         <div className='containerHome'></div>
       <Login />
+      <Register/>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,6 +31,7 @@ function App() {
         <Route path="/clotheswoman" element={<ClothesWoman />} />
         <Route path="/accessories" element={<Accessoires />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
