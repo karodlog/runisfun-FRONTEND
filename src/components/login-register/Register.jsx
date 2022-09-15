@@ -1,11 +1,14 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../store/actions/actions";
 import { UserContext } from "../context/userContext";
 
 const Register = () => {
   const connected = useSelector((state) => state.auth.isConnected);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { modalState, toggleModals } = useContext(UserContext);
 
   const [validation, setvalidation] = useState("");
@@ -25,6 +28,7 @@ const Register = () => {
       lastname: inputs.current[2].value,
       password: inputs.current[3].value,
     };
+    
     dispatch(registerUser(data));
 
     if (inputs.current[3].value.length < 8) {
@@ -33,11 +37,12 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {
-    if (connected) {
-      toggleModals("close");
+  useEffect(()=>{
+    if(connected){
+      toggleModals('close')
+      navigate('shoesman')
     }
-  }, [connected]);
+  }, [connected])
 
   return (
     <>

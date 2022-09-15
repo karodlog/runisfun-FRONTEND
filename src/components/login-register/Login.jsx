@@ -1,7 +1,9 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../store/actions/actions";
 import { UserContext } from "../context/userContext";
+
 
 
 
@@ -13,7 +15,7 @@ const Login = () => {
   const { modalState, toggleModals } = useContext(UserContext);
 
   const [validation, setvalidation] = useState('');
-
+  const navigate = useNavigate();
   const inputs = useRef([])
   const addInputs = el =>{
     if(el && !inputs.current.includes(el)){
@@ -23,7 +25,6 @@ const Login = () => {
 
   const handleForm = e =>{
     e.preventDefault()
-    console.log(inputs);
     const data = {
       credential: inputs.current[0].value,
       password: inputs.current[1].value
@@ -34,8 +35,11 @@ const Login = () => {
   useEffect(()=>{
     if(connected){
       toggleModals('close')
+      navigate('shoesman')
     }
   }, [connected])
+
+
 
 
   return (

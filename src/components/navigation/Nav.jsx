@@ -1,13 +1,27 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logos/run-is-fun-vector-NEG++.png";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Search from "./Search";
+import { useSelector } from "react-redux";
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
+  const connected = useSelector((state) => state.auth.isConnected);
+  const [bonjour, setbonjour] = useState();
+
+  useEffect(() => {
+  
+    if(connected){
+      setbonjour("Bonjour machin ! Bonne visite.")
+      
+    }
+  }, [connected]);
+
+
 
   
   const onLoad = () => {
@@ -44,7 +58,10 @@ const Nav = () => {
 
   useEffect(() => {
     onLoad();
+  
   }, []);
+
+
 
   return (
     <div className="nav">
@@ -93,6 +110,9 @@ const Nav = () => {
         </ul>
       </div>
       <div className="ligne"></div>
+      <div className="bonjourUser">
+        <p>{bonjour}</p>
+      </div>
     </div>
   );
 };

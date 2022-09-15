@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: row;
   z-index: 200;
-  .ligne{
+  .ligne {
     position: absolute;
     width: 100%;
     height: 0.5px;
@@ -81,9 +81,7 @@
     top: 170px;
     left: 0px;
     // z-index: -1;
-  
   }
-  
 }
 .containerNav {
   width: 100%;
@@ -92,15 +90,14 @@
   justify-content: space-around;
   // background: #000;
 
-
   .containerLogo {
     width: 330px;
     min-width: 320px;
     margin-top: 2 0px;
     z-index: 1000;
     // background: yellow;
-    img{
-        width: 100%;
+    img {
+      width: 100%;
     }
   }
 
@@ -128,7 +125,7 @@
       padding-right: 25px;
       width: auto;
 
-      &:nth-child(1){
+      &:nth-child(1) {
         border-right: 1px solid $RUNvert;
       }
     }
@@ -146,7 +143,6 @@
     }
   }
 }
-
 
 .active {
   position: relative;
@@ -170,3 +166,16 @@
   }
 }
 
+.bonjourUser {
+  color: white;
+  position: absolute;
+  left:1455px;
+  font-size: 0.9rem;
+  transform: translateY(-300px);
+  animation: 2s ease-in-out bonjour forwards;
+  @keyframes bonjour {
+    to {
+      transform: translateY(50px);
+    }
+  }
+}
