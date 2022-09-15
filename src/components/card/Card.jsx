@@ -11,12 +11,12 @@ const Card = ({ element }) => {
     changeColorCard = "containerCard";
   }
   if (element.promo === "discount") {
-    changeColorBoxPrice = "containerPriceOrange";
+    changeColorBoxPrice = "containerPrice containerPriceOrange";
     changeColorPromo = "infoPrice infoPriceOrange";
     changeColorCard = "containerCard containerCardOrange";
   }
   if (element.promo === "good deal") {
-    changeColorBoxPrice = "containerPriceRouge";
+    changeColorBoxPrice = "containerPrice containerPriceRouge";
     changeColorPromo = "infoPrice infoPriceRed";
     changeColorCard = "containerCard containerCardRed";
   }
@@ -30,17 +30,20 @@ const Card = ({ element }) => {
         <div className="containerPicture">
           <img src={element.picture} alt="" />
         </div>
+        <div className={changeColorPromo}>
+          <h4 className="promoShoes">{element.promo}</h4>
+        </div>
         <div className="containerTxt">
-          <h5 className="brandShoes">{element.brand}</h5>
-          <h4 className="nameShoes">{element.name}</h4>
-          <p className="descriptionShoes">{element.description}</p>
+          <div className="infosShoes">
+            <h5 className="brandShoes">{element.brand}</h5>
+            <h4 className="nameShoes">{element.name}</h4>
+            <p className="descriptionShoes">{element.description}</p>
 
-          <div className={changeColorPromo}>
-            <h4 className="promoShoes">{element.promo}</h4>
+            <div className="infoShoes">
+              <h4 className="activityShoes">{element.activity}</h4>
+            </div>
           </div>
-          <div className="infoShoes">
-            <h4 className="activityShoes">{element.activity}</h4>
-          </div>
+
           <h3 className="barredPriceShoes">
             <strike>{element.barredPrice}</strike>
           </h3>
