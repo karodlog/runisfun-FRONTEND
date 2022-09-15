@@ -1,7 +1,15 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../store/actions/actions";
 import { UserContext } from "../context/userContext";
 
+
+
+
 const Login = () => {
+
+  const connected = useSelector(state=>state.auth.isConnected);
+  const dispatch = useDispatch();
   const { modalState, toggleModals } = useContext(UserContext);
 
   const [validation, setvalidation] = useState('');
@@ -15,8 +23,20 @@ const Login = () => {
 
   const handleForm = e =>{
     e.preventDefault()
-
+    console.log(inputs);
+    const data = {
+      credential: inputs.current[0].value,
+      password: inputs.current[1].value
+    }
+    dispatch(loginUser(data));
   }
+
+  useEffect(()=>{
+    if(connected){
+      toggleModals('close')
+    }
+  }, [connected])
+
 
   return (
     <>
@@ -60,7 +80,7 @@ const Login = () => {
                       {validation}
                     </p>
                   </div>
-                  <button className="loginSubmit">Submit</button>
+                  <button type="submit" className="loginSubmit">Submit</button>
                 </form>
               </div>
             </div>

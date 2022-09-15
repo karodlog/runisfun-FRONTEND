@@ -12,12 +12,14 @@ import Nav from "./components/navigation/Nav";
 import Login from "./components/login-register/Login";
 import Register from "./components/login-register/Register";
 import Footer from "./components/Footer/Footer";
+import { Provider } from "react-redux";
+import store from './store/store'
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   return (
-
+    <Provider store={store}>
     <BrowserRouter>
         <div className='containerHome'></div>
       <Login />
@@ -33,6 +35,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </Provider>
   );
 }
 

@@ -7,11 +7,13 @@ import { UserContext } from "../context/userContext";
 const Search = () => {
   const {toggleModals} = useContext(UserContext)
 
+  const element = <div><button onClick={()=> toggleModals('login')} type="btn">Se connecter</button>
+        <button onClick={()=> toggleModals('register')} type="btn">S'enregistrer</button></div>
+
   return (
     <div className="search">
       <div className="buttons">
-        <button onClick={()=> toggleModals('login')} type="btn">Se connecter</button>
-        <button onClick={()=> toggleModals('register')} type="btn">S'enregistrer</button>
+        {element}
         <div className="panier">
           <label htmlFor="article">
             <span>Mon</span>
