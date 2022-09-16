@@ -166,17 +166,17 @@
   }
 }
 
-.bonjourUser {
+.bonjourUser p {
   color: white;
   position: absolute;
-  left:1455px;
+  left:74%;
   transition: 0.5s;
   font-size: 0.9rem;
   transform: translateY(-300px);
-  animation: 2s ease-in-out bonjour forwards;
+  animation: 3s ease-in-out bonjour forwards;
   @keyframes bonjour {
     to {
-      transform: translateY(50px);
+      transform: translateY(35px);
     }
   }
 }

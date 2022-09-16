@@ -16,7 +16,8 @@ const Nav = () => {
   const [bonjour, setbonjour] = useState();
   setTimeout(()=>{
     if(connected){
-      setbonjour("Bonjour machin ! Bonne visite.")     
+      setbonjour(`Bonjour machin !\n
+      Nous te souhaitons une bonne visite.`)     
     }
   }, 300)
 
