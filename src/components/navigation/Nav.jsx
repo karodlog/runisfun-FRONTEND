@@ -11,15 +11,22 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
   const connected = useSelector((state) => state.auth.isConnected);
-  const [bonjour, setbonjour] = useState();
-
-  useEffect(() => {
+  console.log(connected);
   
+  const [bonjour, setbonjour] = useState();
+  setTimeout(()=>{
     if(connected){
-      setbonjour("Bonjour machin ! Bonne visite.")
-      
+      setbonjour("Bonjour machin ! Bonne visite.")     
     }
-  }, [connected]);
+  }, 300)
+
+  // useEffect(() => {
+  
+  //   if(connected){
+  //     setbonjour("Bonjour machin ! Bonne visite.")
+      
+  //   }
+  // }, [connected]);
 
 
 

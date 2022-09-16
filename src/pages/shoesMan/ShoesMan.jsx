@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from "../../components/card/Card";
 import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
 import runner1 from './jakob-owens-7tMKyuV-9yo-unsplash.png'
+import Footer from "../../components/Footer/Footer";
 
 const ShoesMan = () => {
   const [data, setdata] = useState([]);
@@ -31,7 +32,7 @@ const ShoesMan = () => {
         ))}
       </ul>
 
-      
+      <Footer />
     </div>
   );
 };
