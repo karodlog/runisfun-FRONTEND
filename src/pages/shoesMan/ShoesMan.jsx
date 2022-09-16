@@ -23,10 +23,10 @@ const ShoesMan = () => {
       </div>
 
       <ul className="listCard">
-      <BarreFiltreShoes />
+        <BarreFiltreShoes  />
         {data
         .map((element, index) => (
-            <>
+          <>
           <Card key={index} element={element} />
           </>
         ))}

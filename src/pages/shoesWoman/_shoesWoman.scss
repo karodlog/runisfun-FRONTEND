@@ -1,13 +1,14 @@
 .runnerWom{
-    width: 140%;
+    width: 155%;
 }
 
 .runneuse{
     width: 500px;
     position: absolute;
-    top: 190px;
+    top: 200px;
     left: 0px;
     // overflow: hidden;
     z-index: 100;
+    filter: brightness(120%) contrast(90%);
 
 }
