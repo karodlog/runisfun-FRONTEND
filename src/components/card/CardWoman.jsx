@@ -1,7 +1,7 @@
 import React from "react";
-import pictoMan from "../card/person-solid.svg";
+import pictoWoman from "../card/person-dress-solid.svg"
 
-const Card = ({ element }) => {
+const CardWoman = ({ element }) => {
   let changeColorBoxPrice;
   let changeColorPromo;
   let changeColorCard;
@@ -24,8 +24,8 @@ const Card = ({ element }) => {
   return (
     <div>
       <li className={changeColorCard}>
-        <div className="picto">
-          <img src={pictoMan} className="pictoImg" alt="" />
+        <div className="pictoWoman">
+          <img src={pictoWoman} className="pictoWomanImg" alt="" />
         </div>
         <div className="containerPicture">
           <img src={element.picture} alt="" />
@@ -56,4 +56,4 @@ const Card = ({ element }) => {
   );
 };
 
-export default Card;
+export default CardWoman;
