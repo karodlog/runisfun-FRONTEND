@@ -3,9 +3,9 @@ import BarreFiltreShoes from '../../components/barreFiltre/BarreFiltreShoes';
 
 const Home = () => {
     return (
-        <>
+        <div className='home'>
 
-        </>
+        </div>
     );
 };
 

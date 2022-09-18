@@ -80,7 +80,7 @@
     background: linear-gradient(to left, $RUNvert 20%, $RUNbleufonce 90%);
     top: 170px;
     left: 0px;
-    // z-index: -1;
+    z-index: 10000;
   }
 }
 .containerNav {

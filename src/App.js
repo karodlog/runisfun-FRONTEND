@@ -23,10 +23,10 @@ function App() {
   return (
     <Provider store={store}>
     <BrowserRouter>
-        <div className='containerHome'></div>
       <Login />
       <Register/>
       <Nav />
+        <div className='containerHome'></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shoesman" element={<ShoesMan />} />
@@ -36,6 +36,7 @@ function App() {
         <Route path="/clotheswoman" element={<ClothesWoman />} />
         <Route path="/accessories" element={<Accessoires />} />
       </Routes>
+      <Footer />
       
     </BrowserRouter>
     </Provider>

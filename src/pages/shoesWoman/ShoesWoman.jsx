@@ -29,7 +29,6 @@ const ShoesWoman = () => {
                 </>
             ))}
       </ul>
-      <Footer />
     </div>
   );
 };

@@ -69,3 +69,43 @@
     ),
     linear-gradient(90deg, rgb(16, 21, 69), rgb(16, 21, 69));
 }
+
+.container-text{
+  width: 93%;
+  display: grid;
+  padding: 30px 20px 30px 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 60px;
+  margin: 0 auto;
+  font-family: $FiraExtraLight;
+  font-size: 0.8rem;
+  text-align: justify;
+  // background: orange;
+  color: $RUNwhite;
+  .text{
+  }
+  .text:not(:last-child){
+    padding-right: 60px;
+    border-right: 1px solid $RUNvert;
+  }
+}
+
+.logoReseaux{
+  text-align: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin-top: 10px;
+  img{
+    margin: 10px;
+    transform: scale(120%);
+  }
+
+}
+
+.appli{
+  filter: invert(100%);
+  justify-content: start;
+}
+
