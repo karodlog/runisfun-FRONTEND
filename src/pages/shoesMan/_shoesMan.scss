@@ -5,7 +5,7 @@
     // width: 1287px;
     width: 70%;
     gap: 30px;
-    margin: 50px 70px 70px 450px;
+    margin: 100px 70px 70px 430px;
     opacity: 90%;
 }
 
@@ -18,17 +18,73 @@
     z-index: 100;
 
 }
-// .runnerDetour{
-//     width: 600px;
-//     position: absolute;
-//     // overflow: hidden;
-//     z-index: 100;
-//     // top: 80;
-// }
 .runner1{
     width: 200%;
 }
-// .runner3{
-//     width: 133%;
-    
-// }
+
+a{
+    text-decoration: none;
+    color: $RUNgrisfonce;
+}
+
+.recherches{
+    width: 250px;
+    height: 300px;
+    // background: #000;
+    z-index: 200;
+    position: absolute;
+    left: 490px;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+.radio-container {
+    // justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 180px;
+    // height: auto;
+    display: flex;
+    padding-bottom: 40px;
+    flex-direction: column;
+    // margin: 20px auto;
+    // padding: 15px 40px;
+    opacity: 100%;
+    // background-color: orange;
+
+
+    .selection {
+      background: $RUNbleufonce;
+      padding: 5px 10px;
+      margin: 8px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 140px;
+      
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.676);
+      input{
+        display: block;
+        width: 20px;
+        
+      }
+      label {
+        cursor: pointer;
+        color: $RUNvert;
+        text-transform: uppercase;
+        // text-align: center;
+      }
+    }
+  }
+
+
+  
+.activity{
+    text-transform: uppercase;
+    color: $RUNwhite;
+    font-size: 1.6rem;
+    letter-spacing: 10px;
+}

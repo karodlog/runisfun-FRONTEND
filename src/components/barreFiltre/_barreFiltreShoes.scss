@@ -1,4 +1,5 @@
 .barreFiltreShoes{
+    visibility: hidden;
     padding: 20px;
     background: white;
     border-radius: 20px;
@@ -7,28 +8,28 @@
     // z-index: 500;
 }
 
-.containerTxtSearch{
-    // z-index: 1000;
-    // width: 100%;
-    // background: orange;
-}
-legend{
-    text-align: center;
-    padding: 5px;
-    text-transform: uppercase;
-}
-fieldset{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    border-radius: 5px;
-    padding: 10px;
-}
-.choice{
-    display: flex;
-}
-.choiceActivity{
-    text-transform: uppercase;
-}
+// .containerTxtSearch{
+//     // z-index: 1000;
+//     // width: 100%;
+//     // background: orange;
+// }
+// legend{
+//     text-align: center;
+//     padding: 5px;
+//     text-transform: uppercase;
+// }
+// fieldset{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: start;
+//     align-items: flex-start;
+//     border-radius: 5px;
+//     padding: 10px;
+// }
+// .choice{
+//     display: flex;
+// }
+// .choiceActivity{
+//     text-transform: uppercase;
+// }
 

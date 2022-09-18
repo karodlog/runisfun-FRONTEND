@@ -10,11 +10,23 @@ const Search = () => {
   const [logout, setlogout] = useState();
   const [byebye, setbyebye] = useState();
 
-  const logOutFunction = () => {
+
+
+const logoutfunction = ()=>{
+
+  const timer = setTimeout(()=>{
+    setbyebye("Merci de votre visite et à bientôt");
+  }, 1000);
+  setTimeout(()=>{
     setlogout(() => window.location.reload());
-    setbyebye("Aurevoir et à bientôt");
-  };
+
+  },5000)
+  return() => clearTimeout(timer)
+
+}
   
+ 
+
 
   let element;
   if (!connected) {
@@ -40,7 +52,7 @@ const Search = () => {
     element = (
       <div>
         <button
-          onClick={logOutFunction}
+          onClick={logoutfunction}
           style={{ width: "230px", height: "30px" }}
           type="btn"
         >
@@ -49,6 +61,7 @@ const Search = () => {
       </div>
     );
   }
+
 
   return (
     <div className="search">
@@ -70,7 +83,7 @@ const Search = () => {
           </div>
         </div>
       </div>
-      <input type="text" placeholder={byebye} />
+      <input id="aurevoir" type="text" placeholder={byebye} />
     </div>
   );
 };

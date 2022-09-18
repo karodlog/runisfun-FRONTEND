@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../../components/card/Card";
 import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
-import runner1 from './jakob-owens-7tMKyuV-9yo-unsplash.png'
+import runner1 from "./jakob-owens-7tMKyuV-9yo-unsplash.png";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 const ShoesMan = () => {
   const [data, setdata] = useState([]);
+  const [activity, setactivity] = useState();
+  const [promo, setpromo] = useState();
 
+  const categories = ["running", "trail", "hike"];
+  const promotions = ["new", "discount", "good deal"];
+  
 
   const url = "http://localhost:5000/api/manshoes/";
 
@@ -15,24 +21,63 @@ const ShoesMan = () => {
   useEffect(() => {
     axios.get(url).then((res) => setdata(res.data));
   }, []);
+  console.log(data);
 
   return (
     <div>
+      <div className="recherches">
+        <div className="radio-container">
+          <h4 className="activity">Activity</h4>
+          {categories.map((category) => (
+            <div className="selection">
+              <label htmlFor={category}>{category}</label>
+              <input
+                type="radio"
+                id={category}
+                name="categoryAct"
+                checked={category === activity}
+                onChange={(e) => setactivity(e.target.id)}
+              />
+            </div>
+          ))}
+          <h4 className="activity">Promo</h4>
+          {promotions.map((prom) => (
+            <div className="selection">
+              <label htmlFor={prom}>{prom}</label>
+              <input
+                type="radio"
+                id={prom}
+                name="categoryrProm"
+                checked={prom === promo}
+                onChange={(e) => setpromo(e.target.id)}
+                defaultChecked=""
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="runner">
-        <img className="runner1" src={runner1}alt="" />
+        <img className="runner1" src={runner1} alt="" />
       </div>
 
       <ul className="listCard">
-        <BarreFiltreShoes  />
+        <BarreFiltreShoes />
         {data
-        .map((element, index) => (
-          <>
-          <Card key={index} element={element} />
-          </>
-        ))}
+            // .filter((element) => element.activity.includes(activity))
+            // .filter((element) => element.promo.includes(promo))
+          .map((element, index) => (
+            <Link
+              to={{
+                pathname: `/shoesman/${element.name}`,
+                // pathname: `/shoesman/${element.name.replace(/\s+/g, "").trim()}`,
+              }}
+            >
+              <Card key={index} element={element} />
+            </Link>
+          ))}
       </ul>
 
-      <Footer />
     </div>
   );
 };

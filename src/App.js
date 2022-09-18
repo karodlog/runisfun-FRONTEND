@@ -14,6 +14,8 @@ import Register from "./components/login-register/Register";
 import Footer from "./components/Footer/Footer";
 import { Provider } from "react-redux";
 import store from './store/store'
+import ShoesManProduct from "./pages/shoesManProduct/ShoesManProduct";
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -28,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shoesman" element={<ShoesMan />} />
+        <Route path="/shoesman/:id" element={<ShoesManProduct />} />
         <Route path="/shoeswoman" element={<ShoesWoman />} />
         <Route path="/clothesman" element={<ClothesMan />} />
         <Route path="/clotheswoman" element={<ClothesWoman />} />

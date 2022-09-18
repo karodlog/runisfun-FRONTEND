@@ -35,7 +35,7 @@ const Login = () => {
   useEffect(()=>{
     if(connected){
       toggleModals('close')
-      navigate('shoesman')
+      navigate('/')
     }
   }, [connected])
 

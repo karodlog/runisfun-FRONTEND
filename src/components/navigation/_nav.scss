@@ -169,11 +169,11 @@
 .bonjourUser p {
   color: white;
   position: absolute;
-  left:74%;
+  left: 75%;
   transition: 0.5s;
   font-size: 0.9rem;
   transform: translateY(-300px);
-  animation: 3s ease-in-out bonjour forwards;
+  animation: 2s ease-in-out bonjour forwards;
   @keyframes bonjour {
     to {
       transform: translateY(35px);

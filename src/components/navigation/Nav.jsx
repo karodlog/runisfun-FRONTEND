@@ -19,15 +19,23 @@ const Nav = () => {
       setbonjour(`Bonjour machin !\n
       Nous te souhaitons une bonne visite.`)     
     }
-  }, 300)
+  }, 2000)
+clearTimeout(bonjour)
 
-  // useEffect(() => {
+
+  // const logoutfunction = ()=>{
+
+  //   const timer = setTimeout(()=>{
+  //     setbyebye("Merci de votre visite et à bientôt");
+  //   }, 2000);
+  //   setTimeout(()=>{
+  //     setlogout(() => window.location.reload());
   
-  //   if(connected){
-  //     setbonjour("Bonjour machin ! Bonne visite.")
-      
-  //   }
-  // }, [connected]);
+  //   },4000)
+  //   return() => clearTimeout(timer)
+  
+  // }
+  
 
 
 
@@ -110,7 +118,7 @@ const Nav = () => {
               <h4>
                 cardio <span>■</span> chrono
               </h4>
-            </li>
+            </li >
           </NavLink>
           <li>
             <Search />
