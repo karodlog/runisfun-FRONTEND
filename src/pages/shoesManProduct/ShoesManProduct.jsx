@@ -33,7 +33,7 @@ const ShoesManProduct = () => {
 // console.log(pictures[0].lienPicture);
 
     return (
-      <div className="showcase">
+      <div className="shoesManProduct">
         <div className="container-img-showcase">
           {/* <img
             className="img-showcase"

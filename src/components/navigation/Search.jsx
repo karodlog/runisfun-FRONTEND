@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserContext } from "../context/userContext";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { registerUser } from "../../store/actions/actions";
 
 const Search = () => {
   const { toggleModals } = useContext(UserContext);
@@ -16,7 +17,7 @@ const logoutfunction = ()=>{
 
   const timer = setTimeout(()=>{
     setbyebye("Merci de votre visite et à bientôt");
-  }, 1000);
+  }, 500);
   setTimeout(()=>{
     setlogout(() => window.location.reload());
 

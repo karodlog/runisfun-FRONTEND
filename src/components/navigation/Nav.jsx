@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
   const connected = useSelector((state) => state.auth.isConnected);
-  console.log(connected);
   
   const [bonjour, setbonjour] = useState();
   setTimeout(()=>{
