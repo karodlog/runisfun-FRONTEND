@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const ShoesMan = () => {
   const [data, setdata] = useState([]);
-  const [activity, setactivity] = useState();
-  const [promo, setpromo] = useState();
+  const [activity, setactivity] = useState('');
+  const [promo, setpromo] = useState('');
 
   const categories = ["running", "trail", "hike"];
   const promotions = ["new", "discount", "good deal"];
@@ -64,12 +64,12 @@ const ShoesMan = () => {
       <ul className="listCard">
         <BarreFiltreShoes />
         {data
-            // .filter((element) => element.activity.includes(activity))
-            // .filter((element) => element.promo.includes(promo))
+            .filter((element) => element.activity.includes(activity))
+            .filter((element) => element.promo.includes(promo))
           .map((element, index) => (
             <Link
               to={{
-                pathname: `/shoesman/${element.name}`,
+                pathname: `/shoesman/${element._id}`,
                 // pathname: `/shoesman/${element.name.replace(/\s+/g, "").trim()}`,
               }}
             >

@@ -11,12 +11,13 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
   const connected = useSelector((state) => state.auth.isConnected);
+  const firstname = useSelector((state) => state.auth.firstname);
+
   
   const [bonjour, setbonjour] = useState();
   setTimeout(()=>{
     if(connected){
-      setbonjour(`Bonjour machin !\n
-      Nous te souhaitons une bonne visite.`)     
+      setbonjour(`Bonjour ${firstname} ! RunIsFun te souhaite la bienvenue.`)     
     }
   }, 2000)
 clearTimeout(bonjour)

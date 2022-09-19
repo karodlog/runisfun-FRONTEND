@@ -8,6 +8,7 @@ import { registerUser } from "../../store/actions/actions";
 const Search = () => {
   const { toggleModals } = useContext(UserContext);
   const connected = useSelector((state) => state.auth.isConnected);
+  const firstname = useSelector((state) => state.auth.firstname);
   const [logout, setlogout] = useState();
   const [byebye, setbyebye] = useState();
 
@@ -16,12 +17,12 @@ const Search = () => {
 const logoutfunction = ()=>{
 
   const timer = setTimeout(()=>{
-    setbyebye("Merci de votre visite et à bientôt");
+    setbyebye(`Merci de ta visite ${firstname} et à très bientôt...`);
   }, 500);
   setTimeout(()=>{
     setlogout(() => window.location.reload());
 
-  },5000)
+  },3000)
   return() => clearTimeout(timer)
 
 }

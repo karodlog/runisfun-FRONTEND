@@ -7,6 +7,7 @@ import pictures from '../../pictures';
 
 
 const ShoesManProduct = () => {
+  const {id} = useParams();
 
     const [value, setvalue] = useState([]);
     const url = "http://localhost:5000/api/manshoes/";
@@ -16,13 +17,12 @@ const ShoesManProduct = () => {
     }, []);
 
     
-    console.log(value[0]);
+    console.log(value);
 
     const dataPiece = value.map((piece, index) => piece)
-    console.log(dataPiece[0]);
+    console.log(dataPiece);
 
 
-    const {id} = useParams();
     console.log(id);
 
     const productClicked = dataPiece.findIndex(
@@ -35,15 +35,15 @@ const ShoesManProduct = () => {
     return (
       <div className="shoesManProduct">
         <div className="container-img-showcase">
-          {/* <img
+          <img
             className="img-showcase"
             src={`https://images2.imgbox.com/${pictures[productClicked].img}.png`}
             alt="produit"
-          /> */}
+          />
         </div>
         <div className="product-infos">
-          {/* <h2>{dataPiece[productClicked].name}</h2>
-          <p>Prix: {dataPiece[productClicked].price} €</p> */}
+          <h2>{dataPiece[productClicked].name}</h2>
+          <p>Prix: {dataPiece[productClicked].price} €</p>
           <form>
             {/* <label htmlFor="quantity">Quantité</label> */}
             {/* <input
