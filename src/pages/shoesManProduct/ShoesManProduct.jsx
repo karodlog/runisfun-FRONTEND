@@ -1,50 +1,30 @@
-import axios from 'axios';
-import React, {useEffect, useState, useRef} from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import pictures from '../../pictures';
-
-
+import axios from "axios";
+import React, { useEffect, useState} from "react";
+import { useParams } from "react-router-dom";
 
 const ShoesManProduct = () => {
-  const {id} = useParams();
+  const { id } = useParams();
 
-    const [value, setvalue] = useState([]);
-    const url = "http://localhost:5000/api/manshoes/";
-  
-    useEffect(() => {
-      axios.get(url).then((res) => setvalue(res.data));
-    }, []);
+  const [value, setvalue] = useState([]);
+  const url = `http://localhost:5000/api/manshoes/${id}`;
 
-    
-    console.log(value);
+  useEffect(() => {
+    axios.get(url).then((res) => setvalue(res.data));
+  }, []);
 
-    const dataPiece = value.map((piece, index) => piece)
-    console.log(dataPiece);
+  console.log(value);
 
-
-    console.log(id);
-
-    const productClicked = dataPiece.findIndex(
-        (objet) => objet.name ===id);
-
-        console.log(productClicked);
-
-// console.log(pictures[0].lienPicture);
-
-    return (
-      <div className="shoesManProduct">
+  return (
+    <div className="shoesManProduct">
+      <div className="cardShoesManProduct">
         <div className="container-img-showcase">
-          <img
-            className="img-showcase"
-            src={`https://images2.imgbox.com/${pictures[productClicked].img}.png`}
-            alt="produit"
-          />
+          <img className="img-showcase" src={value.picture} alt="produit" />
         </div>
         <div className="product-infos">
-          <h2>{dataPiece[productClicked].name}</h2>
-          <p>Prix: {dataPiece[productClicked].price} €</p>
-          <form>
+          <h2 className="nameProduct">{value.name}</h2>
+          <p>Prix: {value.price}</p>
+          <p className="descriptionProduct">{value.description}</p>
+          {/* <form> */}
             {/* <label htmlFor="quantity">Quantité</label> */}
             {/* <input
             type="number"
@@ -52,12 +32,12 @@ const ShoesManProduct = () => {
             value={nbMugs}
             onChange={updateMugs} /> */}
             {/* <button>Ajouter au panier</button> */}
-            <span className="adding-infos"></span>
-          </form>
-
+            {/* <span className="adding-infos"></span>
+          </form> */}
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default ShoesManProduct;

@@ -3,7 +3,6 @@ import axios from "axios";
 import Card from "../../components/card/Card";
 import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
 import runner1 from "./jakob-owens-7tMKyuV-9yo-unsplash.png";
-import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const ShoesMan = () => {
@@ -70,7 +69,6 @@ const ShoesMan = () => {
             <Link
               to={{
                 pathname: `/shoesman/${element._id}`,
-                // pathname: `/shoesman/${element.name.replace(/\s+/g, "").trim()}`,
               }}
             >
               <Card key={index} element={element} />
