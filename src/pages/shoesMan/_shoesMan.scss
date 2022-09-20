@@ -90,14 +90,17 @@ a {
 
 .reset {
   background: $RUNvert;
-  padding: 5px 10px;
+  padding: 8px 10px;
   margin: 8px;
   border-radius: 15px;
+  font-family: $FiraRegularCondensed;
   display: flex;
   width: 140px;
   display: block;
   margin-top: 20px;
-  border: 3px solid $RUNwhite;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.492);
+  // border: 3px solid $RUNwhite;
+  box-shadow: 5px 5px 3px rgb(0, 0, 0);
+  box-shadow: inset 2px 2px 3px $RUNwhite;
 
 }
+
