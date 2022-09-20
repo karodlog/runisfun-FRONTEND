@@ -22,8 +22,13 @@ const ShoesMan = () => {
   }, []);
   console.log(data);
 
+  const resetRecherche = ()=>{
+    setactivity('')
+    setpromo('')
+  }
+
   return (
-    <div>
+    <div className="containerShoesman" >
       <div className="recherches">
         <div className="radio-container">
           <h4 className="activity">Activity</h4>
@@ -53,6 +58,7 @@ const ShoesMan = () => {
               />
             </div>
           ))}
+          <button className="reset" onClick={resetRecherche}>RESET SEARCH</button>
         </div>
       </div>
 

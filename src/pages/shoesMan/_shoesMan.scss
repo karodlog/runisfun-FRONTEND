@@ -1,90 +1,103 @@
-.listCard{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    flex-wrap: wrap;
-    // width: 1287px;
-    width: 70%;
-    gap: 30px;
-    margin: 100px 70px 70px 430px;
-    opacity: 90%;
+.containerShoesman{
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
 }
 
-.runner{
-    width: 500px;
-    position: absolute;
-    top: -10px;
-    left: -130px;
-    // overflow: hidden;
-    z-index: 100;
-
-}
-.runner1{
-    width: 200%;
+.listCard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  // width: 1287px;
+  width: 70%;
+  gap: 30px;
+  margin: 100px 70px 70px 430px;
+  opacity: 90%;
 }
 
-a{
-    text-decoration: none;
-    color: $RUNgrisfonce;
+.runner {
+  width: 500px;
+  position: absolute;
+  top: -10px;
+  left: -130px;
+  // overflow: hidden;
+  z-index: 100;
+}
+.runner1 {
+  width: 200%;
 }
 
-.recherches{
-    width: 250px;
-    height: 300px;
-    // background: #000;
-    z-index: 200;
-    position: absolute;
-    left: 490px;
-    display: flex;
-    flex-direction: column;
+a {
+  text-decoration: none;
+  color: $RUNgrisfonce;
+}
 
-
-
+.recherches {
+  width: 250px;
+  height: 300px;
+  // background: #000;
+  z-index: 200;
+  position: absolute;
+  left: 480px;
+  display: flex;
+  flex-direction: column;
 }
 .radio-container {
-    // justify-content: space-between;
-    align-items: end;
-    width: 100%;
-    height: 180px;
-    // height: auto;
+  // justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 180px;
+  // height: auto;
+  display: flex;
+  padding-bottom: 40px;
+  flex-direction: column;
+  // margin: 20px auto;
+  // padding: 15px 40px;
+  opacity: 100%;
+  // background-color: orange;
+
+  .selection {
+    background: $RUNbleufonce;
+    padding: 5px 10px;
+    margin: 8px;
+    border-radius: 15px;
     display: flex;
-    padding-bottom: 40px;
-    flex-direction: column;
-    // margin: 20px auto;
-    // padding: 15px 40px;
-    opacity: 100%;
-    // background-color: orange;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 140px;
 
-
-    .selection {
-      background: $RUNbleufonce;
-      padding: 5px 10px;
-      margin: 8px;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 140px;
-      
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.676);
-      input{
-        display: block;
-        width: 20px;
-        
-      }
-      label {
-        cursor: pointer;
-        color: $RUNvert;
-        text-transform: uppercase;
-        // text-align: center;
-      }
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.676);
+    input {
+      display: block;
+      width: 20px;
+    }
+    label {
+      cursor: pointer;
+      color: $RUNvert;
+      text-transform: uppercase;
+      // text-align: center;
     }
   }
+}
 
+.activity {
+  text-transform: uppercase;
+  color: $RUNwhite;
+  font-size: 1.6rem;
+  letter-spacing: 10px;
+  margin-top: 30px;
+}
 
-  
-.activity{
-    text-transform: uppercase;
-    color: $RUNwhite;
-    font-size: 1.6rem;
-    letter-spacing: 10px;
+.reset {
+  background: $RUNvert;
+  padding: 5px 10px;
+  margin: 8px;
+  border-radius: 15px;
+  display: flex;
+  width: 140px;
+  display: block;
+  margin-top: 20px;
+  border: 3px solid $RUNwhite;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.492);
+
 }
