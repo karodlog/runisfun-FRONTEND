@@ -64,12 +64,20 @@ const Home = () => {
           },
         }
       )
-      .to(".containerGodasse", {
+      .fromTo(".containerGodasse",
+      {
+        opacity:0,
+        scale: 0.1,
+
+      },
+      
+      {
         opacity: 1,
-        y: 0,
-        duration: 1,
+        scale:1,
+        
+        duration: 2,
         delay: 0.5,
-        ease: "power1Out",
+        ease: "elastic",
       })
       .to(
         ".ligne",
@@ -80,11 +88,12 @@ const Home = () => {
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:2,
+            repeat:3,
             yoyo: true
           },
 
-        }
+        },
+        "<1"
       )
       .to(
         ".ligneVerticale",
@@ -95,7 +104,7 @@ const Home = () => {
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:2,
+            repeat:3,
             yoyo: true
           },
           
