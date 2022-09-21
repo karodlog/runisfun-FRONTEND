@@ -23,12 +23,12 @@ const updateProduct = e =>{
   setnbrProduct(Number(e.target.value))
 }
 
-
+console.log(nbrProduct);
 const addToCart = e =>{
   e.preventDefault()
 
   const itemAdded = {
-    ...value._id,
+    ...value[productClicked],
     quantity: nbrProduct
   }
 

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import SmallNav from "../../components/smallNav/SmallNav";
 import { panierCustomerAdd } from "../../store/actions/actions";
+import { addCase } from "../../store/reducers/panierReducer";
 
 
 const ShoesManProduct = () => {
@@ -31,7 +32,7 @@ const addToCart = e =>{
     quantity: nbrProduct
   }
 
-  dispatch(panierCustomerAdd(itemAdded));
+  dispatch(panierCustomerAdd());
 
 }
   return (

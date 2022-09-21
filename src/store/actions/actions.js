@@ -17,8 +17,8 @@ export const logOutUser = createAction('user/logout');
 
 
 
-export const panierCustomerAdd = createAction('blabla')
-export const panierCustomerUpdate = createAction('bla,,')
+export const panierCustomerAdd = createAction('counter/increment')
+// export const panierCustomerUpdate = createAction('bla,,')
 
 
 
