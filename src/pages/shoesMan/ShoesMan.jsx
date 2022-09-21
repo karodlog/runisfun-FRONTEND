@@ -5,6 +5,7 @@ import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
 import runner1 from "./jakob-owens-7tMKyuV-9yo-unsplash.png";
 import { Link } from "react-router-dom";
 import Nav from "../../components/navigation/Nav";
+import Footer from "../../components/Footer/Footer";
 
 const ShoesMan = () => {
   const [data, setdata] = useState([]);
@@ -82,7 +83,7 @@ const ShoesMan = () => {
             </Link>
           ))}
       </ul>
-
+              <Footer/>
     </div>
   );
 };

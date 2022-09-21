@@ -166,19 +166,19 @@
   }
 }
 
-.bonjourUser{
-  color: white;
-  position: absolute;
-  left: 74.5%;
-  top: -5px;
-  transition: 0.5s;
-  font-size: 1rem;
-  transform: translateY(-300px);
-  animation: 2s ease-in-out bonjour forwards;
-  font-family: $FiraRegularCondensed;
-  @keyframes bonjour {
-    to {
-      transform: translateY(35px);
-    }
-  }
-}
+// .bonjourUser{
+//   color: white;
+//   position: absolute;
+//   left: 74.5%;
+//   top: -5px;
+//   transition: 0.5s;
+//   font-size: 1rem;
+//   transform: translateY(-300px);
+//   animation: 2s ease-in-out bonjour forwards;
+//   font-family: $FiraRegularCondensed;
+//   @keyframes bonjour {
+//     to {
+//       transform: translateY(35px);
+//     }
+//   }
+// }

@@ -12,6 +12,13 @@ const Search = () => {
   const [logout, setlogout] = useState();
   const [byebye, setbyebye] = useState();
 
+  const [bonjour, setbonjour] = useState();
+  setTimeout(()=>{
+    if(connected){
+      setbonjour(`Bonjour ${firstname} ! RunIsFun te souhaite la bienvenue.`)     
+    }
+  }, 2000)
+clearTimeout(bonjour)
 
 
 const logoutfunction = ()=>{
@@ -85,7 +92,7 @@ const search = "Search...";
           </div>
         </div>
       </div>
-      <input id="aurevoir" type="text" placeholder={byebye ? byebye : search} />
+      <input id="aurevoir" type="text" placeholder={byebye ? byebye : bonjour} />
     </div>
   );
 };

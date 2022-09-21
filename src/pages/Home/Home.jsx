@@ -72,18 +72,51 @@ const Home = () => {
         ease: "power1Out",
       })
       .to(
+        ".ligne",
+        {
+          opacity: 1,
+          x:2000,
+          duration:2,
+          stagger: {
+            each: 0.3,
+            from: "random",
+            repeat:2,
+            yoyo: true
+          },
+
+        }
+      )
+      .to(
+        ".ligneVerticale",
+        {
+          opacity: 1,
+          y:2000,
+          duration:2,
+          stagger: {
+            each: 0.3,
+            from: "random",
+            repeat:2,
+            yoyo: true
+          },
+          
+        },
+        "<1"
+      )
+      .to(
         ".lettre",
         {
         opacity:1,
         y: 0,
-        duration: 0.5,
-        ease: "power1Out",
+        duration: 1,
+        ease: "back",
+        // ease: "power3.inOut",
         stagger: {
-          each: 0.2,
-          from: "left",
+          each: 0.1,
+          from: "edges",
         },
 
         },
+        "<0.5"
       )
 
       .to(".essaiNav", {
@@ -92,7 +125,9 @@ const Home = () => {
         duration: 1,
         // delay: 0.5,
         ease: "power2Out",
-      });
+      },
+      "<0,5"
+      );
   };
 
   useEffect(() => {
@@ -103,6 +138,18 @@ const Home = () => {
     <div className="home">
       <div className="essaiNav">
         <Nav className="navigation" />
+      </div>
+      <div className="containerLignes">
+        <div className="ligne ligne1"></div>
+        <div className="ligne ligne2"></div>
+        <div className="ligne ligne3"></div>
+        <div className="ligne ligne4"></div>
+      </div>
+      <div className="containerLignesVerticales">
+        <div className="ligneVerticale"></div>
+        <div className="ligneVerticale"></div>
+        <div className="ligneVerticale"></div>
+        <div className="ligneVerticale"></div>
       </div>
       <div className="bigContainer">
         <div className="bienvenue">

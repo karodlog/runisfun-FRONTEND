@@ -14,13 +14,13 @@ const Nav = () => {
   const firstname = useSelector((state) => state.auth.firstname);
 
   
-  const [bonjour, setbonjour] = useState();
-  setTimeout(()=>{
-    if(connected){
-      setbonjour(`Bonjour ${firstname} ! RunIsFun te souhaite la bienvenue.`)     
-    }
-  }, 2000)
-clearTimeout(bonjour)
+//   const [bonjour, setbonjour] = useState();
+//   setTimeout(()=>{
+//     if(connected){
+//       setbonjour(`Bonjour ${firstname} ! RunIsFun te souhaite la bienvenue.`)     
+//     }
+//   }, 2000)
+// clearTimeout(bonjour)
 
 
   // const logoutfunction = ()=>{
@@ -51,17 +51,17 @@ clearTimeout(bonjour)
         },
         {
           y: 0,
-          duration: 1,
+          duration: 0.7,
           opacity: 1,
           ease: "power3.In",
           stagger: {
-            each: 0.2,
+            each: 0.1,
             from: "random",
           },
         }
       )
       .to(".pages", {
-        y: -30,
+        y: -20,
         duration: 0.5,
         // delay: 0.2,
         ease: "power3.Out"
@@ -127,9 +127,9 @@ clearTimeout(bonjour)
         </ul>
       </div>
       <div className="ligne"></div>
-      <div className="bonjourUser">
+      {/* <div className="bonjourUser">
         <p>{bonjour}</p>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -85,6 +85,7 @@ const ShoesWoman = () => {
             </Link>
           ))}
       </ul>
+      <Footer/>
     </div>
   );
 };
