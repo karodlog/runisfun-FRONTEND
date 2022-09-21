@@ -40,7 +40,7 @@ const Register = () => {
   useEffect(()=>{
     if(connected){
       toggleModals('close')
-      navigate('/')
+      navigate('/shoesman')
     }
   }, [connected])
 

@@ -4,6 +4,7 @@ import Card from "../../components/card/Card";
 import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
 import runner1 from "./jakob-owens-7tMKyuV-9yo-unsplash.png";
 import { Link } from "react-router-dom";
+import Nav from "../../components/navigation/Nav";
 
 const ShoesMan = () => {
   const [data, setdata] = useState([]);
@@ -20,7 +21,6 @@ const ShoesMan = () => {
   useEffect(() => {
     axios.get(url).then((res) => setdata(res.data));
   }, []);
-  console.log(data);
 
   const resetRecherche = ()=>{
     setactivity('')
@@ -29,6 +29,7 @@ const ShoesMan = () => {
 
   return (
     <div className="containerShoesman" >
+      <Nav />
       <div className="recherches">
         <div className="radio-container">
           <h4 className="activity">Activity</h4>

@@ -51,9 +51,9 @@ clearTimeout(bonjour)
         },
         {
           y: 0,
-          duration: 0.8,
+          duration: 1,
           opacity: 1,
-          ease: "power2.inOut",
+          ease: "power3.In",
           stagger: {
             each: 0.2,
             from: "random",
@@ -61,9 +61,10 @@ clearTimeout(bonjour)
         }
       )
       .to(".pages", {
-        y: -20,
+        y: -30,
         duration: 0.5,
-        delay: 0.3,
+        // delay: 0.2,
+        ease: "power3.Out"
       })
       .from(".ligne",
       {

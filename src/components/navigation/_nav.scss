@@ -166,10 +166,11 @@
   }
 }
 
-.bonjourUser p {
+.bonjourUser{
   color: white;
   position: absolute;
-  left: 75%;
+  left: 74.5%;
+  top: -5px;
   transition: 0.5s;
   font-size: 1rem;
   transform: translateY(-300px);

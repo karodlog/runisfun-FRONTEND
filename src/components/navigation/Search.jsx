@@ -28,7 +28,7 @@ const logoutfunction = ()=>{
 }
   
  
-
+const search = "Search...";
 
   let element;
   if (!connected) {
@@ -85,7 +85,7 @@ const logoutfunction = ()=>{
           </div>
         </div>
       </div>
-      <input id="aurevoir" type="text" placeholder={byebye} />
+      <input id="aurevoir" type="text" placeholder={byebye ? byebye : search} />
     </div>
   );
 };

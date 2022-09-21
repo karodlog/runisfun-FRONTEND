@@ -3,16 +3,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import SmallNav from "../../components/smallNav/SmallNav";
+import SmallNavFemme from "../../components/smallNav/SmallNavFemme";
 import { panierCustomerAdd } from "../../store/actions/actions";
 
 
-const ShoesManProduct = () => {
+const ShoesWomanProduct = () => {
   const dispatch = useDispatch();
   const [nbrProduct, setnbrProduct] = useState(1);
   const { id } = useParams();
 
   const [value, setvalue] = useState([]);
-  const url = `http://localhost:5000/api/manshoes/${id}`;
+  const url = `http://localhost:5000/api/womanshoes/${id}`;
 
   useEffect(() => {
     axios.get(url).then((res) => setvalue(res.data));
@@ -37,7 +38,7 @@ const addToCart = e =>{
   return (
     <div className="shoesManProduct">
       <div className="bigContainer">
-        <SmallNav name={value.name} txt='Chaussures hommes'/>
+        <SmallNavFemme name={value.name} txt='Chaussures femmes'/>
         <div className="cardShoesManProduct">
           <div className="generalProduct">
             <div className="containerImg">
@@ -113,4 +114,4 @@ const addToCart = e =>{
   );
 };
 
-export default ShoesManProduct;
+export default ShoesWomanProduct;

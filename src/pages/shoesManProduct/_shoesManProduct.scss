@@ -52,8 +52,24 @@
         height: 90px;
         border-radius: 3px;
         overflow: hidden;
-        .smallPicture {
-          width: 200%;
+        position: relative;
+        .smallPicture.num01 {
+          width: 400%;
+          position: absolute;
+          right: -250px;
+          top: -120px;
+        }
+        .smallPicture.num02 {
+          width: 400%;
+          position: absolute;
+          right: -230px;
+          top: -30px;
+        }
+        .smallPicture.num03 {
+          width: 400%;
+          position: absolute;
+          right: -180px;
+          top: -50px;
         }
       }
     }

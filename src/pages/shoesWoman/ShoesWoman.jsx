@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import BarreFiltreShoes from "../../components/barreFiltre/BarreFiltreShoes";
 import CardWoman from "../../components/card/CardWoman";
 import Footer from "../../components/Footer/Footer";
+import Nav from "../../components/navigation/Nav";
 import runnerWoman from "./bluewater-sweden-adIdmBMErV8-unsplash.png";
+
 
 const ShoesWoman = () => {
   const [datawoman, setdatawoman] = useState([]);
@@ -26,6 +29,7 @@ const ShoesWoman = () => {
 
   return (
     <div className="containerShoeswoman">
+      <Nav />
       <div className="recherches">
         <div className="radio-container">
           <h4 className="activity">Activity</h4>
@@ -72,9 +76,13 @@ const ShoesWoman = () => {
           .filter((element) => element.promo.includes(promo))
 
           .map((element, index) => (
-            <>
+            <Link
+              to={{
+                pathname: `/shoeswoman/${element._id}`,
+              }}
+            >
               <CardWoman key={index} element={element} />
-            </>
+            </Link>
           ))}
       </ul>
     </div>
