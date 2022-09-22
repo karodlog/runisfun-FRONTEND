@@ -50,7 +50,7 @@ const Home = () => {
 
         {
           x: 0,
-          y: 0,
+          y: -175,
           scale: 1,
           delay: 0,
           duration: 2,
@@ -136,7 +136,13 @@ const Home = () => {
         ease: "power2Out",
       },
       "<0,5"
-      );
+      )
+      .to(".bienvenue",{
+        y:100
+      },0)
+      .to(".galeriePictures",{
+        y:100
+      },"<1")
   };
 
   useEffect(() => {
