@@ -27,12 +27,12 @@ console.log(nbrProduct);
 const addToCart = e =>{
   e.preventDefault()
 
-  const itemAdded = {
-    ...value[productClicked],
-    quantity: nbrProduct
-  }
+  // const itemAdded = {
+  //   ...value[productClicked],
+  //   quantity: nbrProduct
+  // }
 
-  dispatch(panierCustomerAdd(itemAdded));
+  // dispatch(panierCustomerAdd(itemAdded));
 
 }
   return (

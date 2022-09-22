@@ -1,17 +1,16 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect} from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logos/run-is-fun-vector-NEG++.png";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Search from "./Search";
-import { useSelector } from "react-redux";
 
 
 gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
-  const connected = useSelector((state) => state.auth.isConnected);
-  const firstname = useSelector((state) => state.auth.firstname);
+  // const connected = useSelector((state) => state.auth.isConnected);
+  // const firstname = useSelector((state) => state.auth.firstname);
 
   
 //   const [bonjour, setbonjour] = useState();

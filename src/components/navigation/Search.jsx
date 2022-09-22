@@ -3,7 +3,6 @@ import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserContext } from "../context/userContext";
 import { useSelector, useDispatch } from "react-redux";
-import { registerUser } from "../../store/actions/actions";
 
 const Search = () => {
   const { toggleModals } = useContext(UserContext);
@@ -19,7 +18,7 @@ const Search = () => {
     }
   }, 2000)
 clearTimeout(bonjour)
-
+console.log(firstname);
 
 const logoutfunction = ()=>{
 
@@ -35,7 +34,6 @@ const logoutfunction = ()=>{
 }
   
  
-const search = "Search...";
 
   let element;
   if (!connected) {
