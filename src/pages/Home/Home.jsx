@@ -122,10 +122,11 @@ const Home = () => {
       
       )
       .to(".bienvenue",{
-        y:100
+        y:150
       },"test")
       .to(".galeriePictures",{
-        y:100
+        y:150,
+        opacity: 0.5
       },"test")
       .to(
         ".lettre",

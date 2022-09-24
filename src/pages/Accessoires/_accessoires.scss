@@ -4,7 +4,18 @@
     height: 100vh;
 }
 
-
+.listCardAccessories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    // width: 1287px;
+    width: 72%;
+    gap: 30px;
+    margin: 100px 70px 70px 430px;
+    opacity: 90%;
+    // border: 2px solid orange;
+  }
+  
 .montre{
     width: 500px;
     position: absolute;

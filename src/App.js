@@ -16,6 +16,7 @@ import { Provider } from "react-redux";
 import store from './store/store'
 import ShoesManProduct from "./pages/shoesManProduct/ShoesManProduct";
 import ShoesWomanProduct from "./pages/shoesManProduct/ShoesWomanProduct";
+import AccessoiresProduct from "./pages/shoesManProduct/AccessoiresProduct";
 
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -37,6 +38,7 @@ function App() {
         <Route path="/clothesman" element={<ClothesMan />} />
         <Route path="/clotheswoman" element={<ClothesWoman />} />
         <Route path="/accessories" element={<Accessoires />} />
+        <Route path="/accessories/:id" element={<AccessoiresProduct/>} />
       </Routes>
       
     </BrowserRouter>

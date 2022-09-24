@@ -154,3 +154,17 @@
   border-bottom-right-radius: 14px;
   transform: scale(101%);
 }
+
+.containerInfos{
+  margin-top: 20px;
+  .plusInfos{
+    font-size: 0.9rem;
+    font-family: $FiraRegular;
+    list-style-type: square;
+    line-height: 20px;
+    span{
+      font-family: $FiraSemiBold;
+      color: $RUNbleufonce;
+    }
+  }  
+}
