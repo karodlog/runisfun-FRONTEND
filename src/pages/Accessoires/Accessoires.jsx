@@ -12,6 +12,7 @@ const Accessoires = () => {
   const [data, setdata] = useState([]);
   const [type, settype] = useState("");
 
+
   const typeProduct = ["watch", "GPS", "headphones"];
 
   const url = "http://localhost:5000/api/accessories/";

@@ -52,7 +52,7 @@ const Home = () => {
           x: 0,
           y: -150,
           scale: 1,
-          delay: 0,
+          delay: 2,
           duration: 2,
           opacity: 1,
           ease: "power3.inOut",

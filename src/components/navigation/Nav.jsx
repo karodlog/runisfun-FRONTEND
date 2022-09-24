@@ -68,7 +68,7 @@ const Nav = () => {
       .from(".ligne",
       {
         x:"-100vw",
-        opacity: 0,
+        opacity: 1,
       });
   };
 

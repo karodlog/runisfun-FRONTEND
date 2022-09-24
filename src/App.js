@@ -13,22 +13,20 @@ import Login from "./components/login-register/Login";
 import Register from "./components/login-register/Register";
 import Footer from "./components/Footer/Footer";
 import { Provider } from "react-redux";
-import store from './store/store'
+import store from "./store/store";
 import ShoesManProduct from "./pages/shoesManProduct/ShoesManProduct";
 import ShoesWomanProduct from "./pages/shoesManProduct/ShoesWomanProduct";
 import AccessoiresProduct from "./pages/shoesManProduct/AccessoiresProduct";
-
+import ListProduct from "./pages/shoesManProduct/ListProduct";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   return (
-    <Provider store={store}>
     <BrowserRouter>
       <Login />
-      <Register/>
-      {/* <Nav /> */}
-        <div className='containerHome'></div>
+      <Register />
+      <div className="containerHome"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shoesman" element={<ShoesMan />} />
@@ -38,11 +36,10 @@ function App() {
         <Route path="/clothesman" element={<ClothesMan />} />
         <Route path="/clotheswoman" element={<ClothesWoman />} />
         <Route path="/accessories" element={<Accessoires />} />
-        <Route path="/accessories/:id" element={<AccessoiresProduct/>} />
+        <Route path="/accessories/:id" element={<AccessoiresProduct />} />
+        <Route path="/pagepanier" element={<ListProduct/>} />
       </Routes>
-      
     </BrowserRouter>
-    </Provider>
   );
 }
 

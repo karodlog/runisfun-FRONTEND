@@ -26,12 +26,12 @@ const AccessoiresProduct = () => {
   const addToCart = (e) => {
     e.preventDefault();
 
-    const itemAdded = {
-      ...value._id,
-      quantity: nbrProduct,
-    };
+    // const itemAdded = {
+    //   ...value._id,
+    //   quantity: nbrProduct,
+    // };
 
-    dispatch(panierCustomerAdd());
+    // dispatch(panierCustomerAdd());
   };
   return (
     <div className="shoesManProduct">
@@ -96,7 +96,7 @@ const AccessoiresProduct = () => {
                   <span>Waterproofing:</span> {value.waterproofing}
                 </li>
                 {value.chrono? <li className="plusInfos">
-                  <span>Chronomètre :</span>
+                  <span>Chronomètre</span>
                 </li>:""}
               </ul>
             </div>

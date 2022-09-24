@@ -8,7 +8,7 @@
     flex-direction: column;
     // background: orange;
     width: 45%;
-    margin: 150px auto;
+    margin: 150px auto 0px;
 }
 .cardShoesManProduct {
   display: flex;
@@ -167,4 +167,46 @@
       color: $RUNbleufonce;
     }
   }  
+}
+
+.containerPanier{
+  background: white;
+  border: 8px solid (darken($RUNvert, 10%));
+  width: 45%;
+  margin: 150px auto;
+  padding: 30px;
+  border-radius: 20px;
+  min-height: 620px;
+  opacity: 85%;
+  .titrePanier{
+    color: $RUNvert;
+    border-bottom: 1px solid $RUNvert;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .listProduct{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $RUNvert;
+    .infosProduct{
+      margin-left: 25px;
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      // background: orange;
+    }
+    .productName{
+      font-family: $FiraExtraBoldCondensed;
+      color: $RUNgrismoyen;
+      font-size: 1.2rem;
+    }
+    .productPrice{
+      font-size: 1.2rem;
+    }
+  }
 }

@@ -39,18 +39,19 @@ input {
 }
 .panier {
   display: flex;
-  width: 28%;
+  width: 40%;
   flex-direction: row;
   justify-content: space-between;
+  // background: orange;
   cursor: pointer;
 
   label{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     text-transform: lowercase;
     align-items: flex-start;
-    // width: 100px;
+    width: 100px;
     // margin-right: 20px;
     color: $RUNwhite;
     font-family: $FiraRegular;

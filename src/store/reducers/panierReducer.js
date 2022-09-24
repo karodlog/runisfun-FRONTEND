@@ -1,23 +1,17 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { panierCustomerAdd, panierCustomerUpdate } from "../actions/actions";
+import { addProduct } from "../actions/panier-actions";
 
 const initialState ={
-    value: 0
+    products: [],
+    msg: 'départ'
 };
 
 const panierReducer = createReducer(initialState, (builder)=>{
     builder
-        .addCase(panierCustomerAdd, (state, action)=>{
-            state.value++
-
-                console.log("addproduct");
+        .addCase(addProduct, (state, action)=>{
+            state.products.push(action.payload);
+            state.msg = 'ajout';
         })
+    });
 
-        // .updateCase(panierCustomerUpdate, (state, action)=>{
-
-        // })
-
-})
-// export const {addCase} = panierReducer.actions;
-
-export default panierReducer;
+export default panierReducer

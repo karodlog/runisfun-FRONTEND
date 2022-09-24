@@ -3,8 +3,9 @@ import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserContext } from "../context/userContext";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-const Search = () => {
+const Search = ({value}) => {
   const { toggleModals } = useContext(UserContext);
   const connected = useSelector((state) => state.auth.isConnected);
   const firstname = useSelector((state) => state.auth.firstname);
@@ -74,21 +75,24 @@ const logoutfunction = ()=>{
     <div className="search">
       <div className="buttons">
         {element}
+        <Link to="/pagepanier">
         <div className="panier">
           <label htmlFor="article">
             <span>Mon</span>
             <span>panier</span>
           </label>
           <div className="pictoCaddie">
-            <h4 id="nbreArticles">4</h4>
+            <h4 id="nbreArticles"></h4>
             <FontAwesomeIcon
               className="articles"
               icon={faBasketShopping}
               size="2x"
               color="white"
+            
             />
           </div>
         </div>
+        </Link>
       </div>
       <input id="aurevoir" type="text" placeholder={byebye ? byebye : bonjour} />
     </div>
