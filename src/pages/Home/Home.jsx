@@ -50,7 +50,7 @@ const Home = () => {
 
         {
           x: 0,
-          y: -175,
+          y: -150,
           scale: 1,
           delay: 0,
           duration: 2,
@@ -88,7 +88,7 @@ const Home = () => {
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:3,
+            repeat:2,
             yoyo: true
           },
 
@@ -104,13 +104,29 @@ const Home = () => {
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:3,
+            repeat:2,
             yoyo: true
           },
           
         },
         "<1"
       )
+
+      .to(".essaiNav", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0,
+        ease: "power2Out",
+      }, "test",
+      
+      )
+      .to(".bienvenue",{
+        y:100
+      },"test")
+      .to(".galeriePictures",{
+        y:100
+      },"test")
       .to(
         ".lettre",
         {
@@ -125,24 +141,9 @@ const Home = () => {
         },
 
         },
-        "<0.5"
+        "test"
       )
 
-      .to(".essaiNav", {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        // delay: 0.5,
-        ease: "power2Out",
-      },
-      "<0,5"
-      )
-      .to(".bienvenue",{
-        y:100
-      },0)
-      .to(".galeriePictures",{
-        y:100
-      },"<1")
   };
 
   useEffect(() => {
