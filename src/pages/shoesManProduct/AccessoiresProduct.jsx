@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import SmallNav from "../../components/smallNav/SmallNav";
+import { Link, useParams } from "react-router-dom";
 import SmallNavAccessories from "../../components/smallNav/SmallNavAccessories";
-import { panierCustomerAdd } from "../../store/actions/actions";
-import { addCase } from "../../store/reducers/panierReducer";
+import { addProduct } from "../../store/actions/panier-actions";
+
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const AccessoiresProduct = () => {
   const dispatch = useDispatch();
@@ -25,24 +27,30 @@ const AccessoiresProduct = () => {
 
   const addToCart = (e) => {
     e.preventDefault();
-
-    // const itemAdded = {
-    //   ...value._id,
-    //   quantity: nbrProduct,
-    // };
-
-    // dispatch(panierCustomerAdd());
+    const article = {
+      name: value.name,
+      picture: value.picture,
+      price: value.price,
+      quantity: value.quantity,
+    };
+    const actionAddArticle = addProduct(article);
+    dispatch(actionAddArticle);
   };
+
+  const ajoutPanier = (e) => {
+    setnbrProduct(Number(nbrProduct++));
+  };
+  
   return (
     <div className="shoesManProduct">
       <div className="bigContainer">
         <SmallNavAccessories name={value.name} txt="Accessoires" />
         <div className="cardShoesManProduct">
           <div className="generalProduct">
-            <div className="containerImg">
-              <div className="container-img-showcase">
+            <div className="containerImgAcc">
+              <div className="container-img-showcaseAcc">
                 <img
-                  className="img-showcase"
+                  className="img-showcaseAcc"
                   src={value.picture}
                   alt="produit"
                 />
@@ -102,7 +110,21 @@ const AccessoiresProduct = () => {
             </div>
           </div>
           <div className="bandeauBas">
-            <p></p>
+          <div className="containerCaddie">
+              <Link to="/pagepanier">
+                <div className="pictoCaddie">
+                  <h4 id="nbreArticles">{nbrProduct}</h4>
+
+                  <FontAwesomeIcon
+                    className="articles"
+                    icon={faBasketShopping}
+                    size="2x"
+                    color="white"
+                  />
+                </div>
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>

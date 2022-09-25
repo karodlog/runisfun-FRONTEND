@@ -4,16 +4,11 @@ import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import SmallNav from "../../components/smallNav/SmallNav";
 import { addProduct } from "../../store/actions/panier-actions";
-import ListProduct from "./ListProduct";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-
 const ShoesManProduct = () => {
-
   const dispatch = useDispatch();
-  
 
   const [nbrProduct, setnbrProduct] = useState(1);
   const { id } = useParams();
@@ -25,34 +20,32 @@ const ShoesManProduct = () => {
     axios.get(url).then((res) => setvalue(res.data));
   }, []);
 
-const updateProduct = e =>{
-  setnbrProduct(Number(e.target.value))
-}
+  const updateProduct = (e) => {
+    setnbrProduct(Number(e.target.value));
+  };
 
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-const addToCart = e =>{
-  e.preventDefault()
-  const article = {
-    name: value.name,
-    picture: value.picture,
-    price: value.price
-  }
-  const actionAddArticle = addProduct(article);
-  dispatch(actionAddArticle)
-  }
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  const addToCart = (e) => {
+    e.preventDefault();
+    const article = {
+      name: value.name,
+      picture: value.picture,
+      price: value.price,
+      quantity: value.quantity,
+      msg: value.msg
+    };
+    const actionAddArticle = addProduct(article);
+    dispatch(actionAddArticle);
+  };
 
-const ajoutPanier = e=>{
-  nbrProduct= (nbrProduct+1)
-  setnbrProduct()
-}
-
-
-
+  const ajoutPanier = (e) => {
+    setnbrProduct(Number(nbrProduct++));
+  };
 
   return (
     <div className="shoesManProduct">
       <div className="bigContainer">
-        <SmallNav name={value.name} txt='Chaussures hommes'/>
+        <SmallNav name={value.name} txt="Chaussures hommes" />
         <div className="cardShoesManProduct">
           <div className="generalProduct">
             <div className="containerImg">
@@ -72,7 +65,7 @@ const ajoutPanier = e=>{
                   />
                 </div>
                 <div className="container_SmallPicture">
-                  <img 
+                  <img
                     src={value.picture}
                     alt="detailProduct"
                     className="smallPicture num02"
@@ -92,7 +85,7 @@ const ajoutPanier = e=>{
               <h2 className="nameProduct">{value.name}</h2>
               <p>Prix: {value.price}</p>
               <p className="descriptionProduct">{value.description}</p>
-              <form onSubmit={addToCart}>
+              <form onSubmit={addToCart} onClick={ajoutPanier}>
                 <div className="containerQuantity containersize">
                   <label htmlFor="size">Pointure :</label>
                   <select name="pointure" id="size">
@@ -112,27 +105,33 @@ const ajoutPanier = e=>{
                 </div>
                 <div className="containerQuantity">
                   <label htmlFor="quantity">Quantité :</label>
-                  <input type="number" id="quantity" value={nbrProduct} onChange={updateProduct} />
+                  <input
+                    type="number"
+                    id="quantity"
+                    value={nbrProduct}
+                    onChange={updateProduct}
+                  />
                 </div>
-                <button onClick={ajoutPanier} className="addPanier">Ajouter au panier</button>
-                <span className="adding-infos"></span>
+                <button className="addPanier">Ajouter au panier</button>
+                <span className="adding-infos">{value.msg}</span>
               </form>
             </div>
           </div>
           <div className="bandeauBas">
-            <p>Voir le panier</p>
-            <div className="pictoCaddie">
-            <h4 id="nbreArticles">{nbrProduct}</h4>
-            <Link to="/pagepanier">
-            <FontAwesomeIcon
-              className="articles"
-              icon={faBasketShopping}
-              size="2x"
-              color="white"
-            />
-            </Link>
-          </div>
+            <div className="containerCaddie">
+              <Link to="/pagepanier">
+                <div className="pictoCaddie">
+                  <h4 id="nbreArticles">{nbrProduct}</h4>
 
+                  <FontAwesomeIcon
+                    className="articles"
+                    icon={faBasketShopping}
+                    size="2x"
+                    color="white"
+                  />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

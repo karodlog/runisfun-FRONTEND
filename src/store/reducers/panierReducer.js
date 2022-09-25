@@ -10,7 +10,7 @@ const panierReducer = createReducer(initialState, (builder)=>{
     builder
         .addCase(addProduct, (state, action)=>{
             state.products.push(action.payload);
-            state.msg = 'ajout';
+            state.msg = 'Produit ajouté';
         })
     });
 

@@ -1,15 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import SmallNav from "../../components/smallNav/SmallNav";
+import { Link, useParams } from "react-router-dom";
 import SmallNavFemme from "../../components/smallNav/SmallNavFemme";
-import { panierCustomerAdd } from "../../store/actions/actions";
-
+import { addProduct } from "../../store/actions/panier-actions";
+import ListProduct from "./ListProduct";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ShoesWomanProduct = () => {
   const dispatch = useDispatch();
+
   const [nbrProduct, setnbrProduct] = useState(1);
+  const [messagePanier, setmessagePanier] = useState('Produit ajouté au panier');
   const { id } = useParams();
 
   const [value, setvalue] = useState([]);
@@ -21,20 +24,26 @@ const ShoesWomanProduct = () => {
 
 const updateProduct = e =>{
   setnbrProduct(Number(e.target.value))
-}
+};
 
-console.log(nbrProduct);
+
 const addToCart = e =>{
-  e.preventDefault()
+  e.preventDefault();
+    const article = {
+      name: value.name,
+      picture: value.picture,
+      price: value.price,
+      quantity: value.quantity,
+    };
+    const actionAddArticle = addProduct(article);
+    dispatch(actionAddArticle);
+  };
 
-  // const itemAdded = {
-  //   ...value[productClicked],
-  //   quantity: nbrProduct
-  // }
+  const ajoutPanier = (e) => {
+    setnbrProduct(Number(nbrProduct++));
+  };
 
-  // dispatch(panierCustomerAdd(itemAdded));
 
-}
   return (
     <div className="shoesManProduct">
       <div className="bigContainer">
@@ -101,12 +110,26 @@ const addToCart = e =>{
                   <input type="number" id="quantity" value={nbrProduct} onChange={updateProduct} />
                 </div>
                 <button className="addPanier">Ajouter au panier</button>
-                <span className="adding-infos"></span>
+                <span className="adding-infos">{messagePanier? messagePanier: ''}</span>
               </form>
             </div>
           </div>
           <div className="bandeauBas">
-            <p></p>
+          <div className="containerCaddie">
+              <Link to="/pagepanier">
+                <div className="pictoCaddie">
+                  <h4 id="nbreArticles">{nbrProduct}</h4>
+
+                  <FontAwesomeIcon
+                    className="articles"
+                    icon={faBasketShopping}
+                    size="2x"
+                    color="white"
+                  />
+                </div>
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>
