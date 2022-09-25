@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addProduct } from "../actions/panier-actions";
+import { addProduct, clearProduct } from "../actions/panier-actions";
 
 const initialState ={
     products: [],
@@ -10,8 +10,11 @@ const panierReducer = createReducer(initialState, (builder)=>{
     builder
         .addCase(addProduct, (state, action)=>{
             state.products.push(action.payload);
-            state.msg = 'Produit ajouté';
         })
+        .addCase(clearProduct, (state) => {
+            state.products = [];
+        })
+
     });
 
 export default panierReducer

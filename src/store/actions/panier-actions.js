@@ -8,3 +8,5 @@ export const addProduct = createAction('product/add', (product)=>({
         msg: "produit ajouté au panier"
     }
 }))
+
+export const clearProduct = createAction('product/clear');
