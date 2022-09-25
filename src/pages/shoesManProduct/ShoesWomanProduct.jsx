@@ -11,8 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ShoesWomanProduct = () => {
   const dispatch = useDispatch();
 
-  const [nbrProduct, setnbrProduct] = useState(1);
-  const [messagePanier, setmessagePanier] = useState('Produit ajouté au panier');
+  const [nbrProduct, setnbrProduct] = useState(Number(0));
+  const [message, setmessage] = useState("");
+
   const { id } = useParams();
 
   const [value, setvalue] = useState([]);
@@ -40,8 +41,13 @@ const addToCart = e =>{
   };
 
   const ajoutPanier = (e) => {
-    setnbrProduct(Number(nbrProduct++));
+    setmessage("Produit ajouté au panier");
+    setnbrProduct(Number(nbrProduct + 1));
+    setTimeout(() => {
+      setmessage("");
+    }, 2000);
   };
+
 
 
   return (
@@ -87,7 +93,7 @@ const addToCart = e =>{
               <h2 className="nameProduct">{value.name}</h2>
               <p>Prix: {value.price}</p>
               <p className="descriptionProduct">{value.description}</p>
-              <form onSubmit={addToCart}>
+              <form onSubmit={addToCart} onClick={ajoutPanier}>
                 <div className="containerQuantity containersize">
                   <label htmlFor="size">Pointure :</label>
                   <select name="pointure" id="size">
@@ -110,8 +116,10 @@ const addToCart = e =>{
                   <input type="number" id="quantity" value={nbrProduct} onChange={updateProduct} />
                 </div>
                 <button className="addPanier">Ajouter au panier</button>
-                <span className="adding-infos">{messagePanier? messagePanier: ''}</span>
+                <span className="adding-infos"></span>
               </form>
+              <div className="messageAjout">{message}</div>
+
             </div>
           </div>
           <div className="bandeauBas">

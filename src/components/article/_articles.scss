@@ -10,7 +10,7 @@
         display: block;
         color: white;
         font-size: 1rem;
-        background: lighten($RUNgrismoyen, 20%);
+        background: lighten($RUNgrislight, 20%);
         transition: 0.2s;
         &:hover{
             background: darken($RUNgrismoyen, 5%);

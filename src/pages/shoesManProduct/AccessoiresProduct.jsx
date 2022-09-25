@@ -11,7 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AccessoiresProduct = () => {
   const dispatch = useDispatch();
-  const [nbrProduct, setnbrProduct] = useState(1);
+  const [nbrProduct, setnbrProduct] = useState(0);
+  const [message, setmessage] = useState("");
+
   const { id } = useParams();
 
   const [value, setvalue] = useState([]);
@@ -38,7 +40,11 @@ const AccessoiresProduct = () => {
   };
 
   const ajoutPanier = (e) => {
-    setnbrProduct(Number(nbrProduct++));
+    setmessage("Produit ajouté au panier");
+    setnbrProduct(Number(nbrProduct + 1));
+    setTimeout(() => {
+      setmessage("");
+    }, 2000);
   };
   
   return (
@@ -84,19 +90,21 @@ const AccessoiresProduct = () => {
               <h2 className="nameProduct">{value.name}</h2>
               <p>Prix: {value.price}</p>
               <p className="descriptionProduct">{value.description}</p>
-              <form onSubmit={addToCart}>
+              <form onSubmit={addToCart} onClick={ajoutPanier}>
                 <div className="containerQuantity">
                   <label htmlFor="quantity">Quantité :</label>
                   <input
                     type="number"
                     id="quantity"
-                    value={nbrProduct}
+                    value='1'
                     onChange={updateProduct}
                   />
                 </div>
                 <button className="addPanier">Ajouter au panier</button>
                 <span className="adding-infos"></span>
               </form>
+              <div className="messageAjout">{message}</div>
+
               <ul className="containerInfos">
                 <li className="plusInfos"><span>Compass</span>: {value.compass}</li>
                 <li className="plusInfos"><span>Altimeter</span>: {value.altimeter}</li>

@@ -10,19 +10,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ShoesManProduct = () => {
   const dispatch = useDispatch();
 
-  const [nbrProduct, setnbrProduct] = useState(1);
+  const [nbrProduct, setnbrProduct] = useState(0);
   const { id } = useParams();
 
   const [value, setvalue] = useState([]);
+  const [message, setmessage] = useState("");
   const url = `http://localhost:5000/api/manshoes/${id}`;
 
   useEffect(() => {
     axios.get(url).then((res) => setvalue(res.data));
   }, []);
 
-  const updateProduct = (e) => {
-    setnbrProduct(Number(e.target.value));
-  };
+  // const updateProduct = (e) => {
+  //   setnbrProduct(Number(e.target.value));
+  // };
 
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   const addToCart = (e) => {
@@ -32,14 +33,17 @@ const ShoesManProduct = () => {
       picture: value.picture,
       price: value.price,
       quantity: value.quantity,
-      msg: value.msg
     };
     const actionAddArticle = addProduct(article);
     dispatch(actionAddArticle);
   };
 
   const ajoutPanier = (e) => {
-    setnbrProduct(Number(nbrProduct++));
+    setmessage("Produit ajouté au panier");
+    setnbrProduct(Number(nbrProduct + 1));
+    setTimeout(() => {
+      setmessage("");
+    }, 2000);
   };
 
   return (
@@ -108,13 +112,13 @@ const ShoesManProduct = () => {
                   <input
                     type="number"
                     id="quantity"
-                    value={nbrProduct}
-                    onChange={updateProduct}
+                    value="1"
+                    // onChange={updateProduct}
                   />
                 </div>
                 <button className="addPanier">Ajouter au panier</button>
-                <span className="adding-infos">{value.msg}</span>
               </form>
+              <div className="messageAjout">{message}</div>
             </div>
           </div>
           <div className="bandeauBas">
