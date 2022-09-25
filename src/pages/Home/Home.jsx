@@ -52,7 +52,7 @@ const Home = () => {
           x: 0,
           y: -150,
           scale: 1,
-          delay: 2,
+          delay: 1,
           duration: 2,
           opacity: 1,
           ease: "power3.inOut",
@@ -64,34 +64,34 @@ const Home = () => {
           },
         }
       )
-      .fromTo(".containerGodasse",
-      {
-        opacity:0,
-        scale: 0.1,
+      .fromTo(
+        ".containerGodasse",
+        {
+          opacity: 0,
+          scale: 0.1,
+        },
 
-      },
-      
-      {
-        opacity: 1,
-        scale:1,
-        
-        duration: 2,
-        delay: 0.5,
-        ease: "elastic",
-      })
+        {
+          opacity: 1,
+          scale: 1,
+
+          duration: 1,
+          delay: 0.5,
+          ease: "elastic",
+        }
+      )
       .to(
         ".ligne",
         {
           opacity: 1,
-          x:2000,
-          duration:2,
+          x: 2000,
+          duration: 1,
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:2,
-            yoyo: true
+            repeat: 2,
+            yoyo: true,
           },
-
         },
         "<1"
       )
@@ -99,52 +99,59 @@ const Home = () => {
         ".ligneVerticale",
         {
           opacity: 1,
-          y:2000,
-          duration:2,
+          y: 1200,
+          duration: 2,
           stagger: {
             each: 0.3,
             from: "random",
-            repeat:2,
-            yoyo: true
+            repeat: 2,
+            yoyo: true,
           },
-          
         },
-        "<1"
+        "<0.5"
       )
 
-      .to(".essaiNav", {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: 0,
-        ease: "power2Out",
-      }, "test",
-      
-      )
-      .to(".bienvenue",{
-        y:150
-      },"test")
-      .to(".galeriePictures",{
-        y:150,
-        opacity: 0.5
-      },"test")
       .to(
-        ".lettre",
+        ".essaiNav",
         {
-        opacity:1,
-        y: 0,
-        duration: 1,
-        ease: "back",
-        // ease: "power3.inOut",
-        stagger: {
-          each: 0.1,
-          from: "edges",
-        },
-
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0,
+          ease: "power2Out",
         },
         "test"
       )
-
+      .to(
+        ".bienvenue",
+        {
+          y: 150,
+        },
+        "test"
+      )
+      .to(
+        ".galeriePictures",
+        {
+          y: 150,
+          opacity: 0.5,
+        },
+        "test"
+      )
+      .to(
+        ".lettre",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "back",
+          // ease: "power3.inOut",
+          stagger: {
+            each: 0.1,
+            from: "edges",
+          },
+        },
+        "test"
+      );
   };
 
   useEffect(() => {
@@ -154,7 +161,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="essaiNav">
-        <Nav className="navigation" />
+        <Nav />
       </div>
       <div className="containerLignes">
         <div className="ligne ligne1"></div>

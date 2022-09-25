@@ -9,31 +9,6 @@ import Search from "./Search";
 gsap.registerPlugin(ScrollToPlugin);
 
 const Nav = () => {
-  // const connected = useSelector((state) => state.auth.isConnected);
-  // const firstname = useSelector((state) => state.auth.firstname);
-
-  
-//   const [bonjour, setbonjour] = useState();
-//   setTimeout(()=>{
-//     if(connected){
-//       setbonjour(`Bonjour ${firstname} ! RunIsFun te souhaite la bienvenue.`)     
-//     }
-//   }, 2000)
-// clearTimeout(bonjour)
-
-
-  // const logoutfunction = ()=>{
-
-  //   const timer = setTimeout(()=>{
-  //     setbyebye("Merci de votre visite et à bientôt");
-  //   }, 2000);
-  //   setTimeout(()=>{
-  //     setlogout(() => window.location.reload());
-  
-  //   },4000)
-  //   return() => clearTimeout(timer)
-  
-  // }
   
 
 

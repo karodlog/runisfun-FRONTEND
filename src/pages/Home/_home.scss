@@ -12,7 +12,7 @@ background: radial-gradient(circle, rgba(255, 255, 255, 0.592) 39%, #7fba132a 66
   transform: translateY(-250px);
 }
 .containerLignes{
-  width: 100%;
+  width: 50%;
   position: absolute;
   height: 360px;
   top: 285px;
@@ -20,30 +20,30 @@ background: radial-gradient(circle, rgba(255, 255, 255, 0.592) 39%, #7fba132a 66
   flex-direction: column;
   justify-content: space-between;
   .ligne{
-    opacity: 0;
+    opacity: 0.5;
     transform: translateX(-100%);
     width: 100%;
-    height: 1px;
-    background: darken($RUNvert, 20%);
+    height: 2px;
+    background: $RUNwhite;
   }
 }
 .containerLignesVerticales{
   width: 363px;
   position: absolute;
-  height: 100%;
+  height: 50%;
   top: 0px;
   left: 772px;
   // background: orange;
   display: flex;
-  z-index: -1;
   flex-direction: row;
   justify-content: space-between;
   .ligneVerticale{
-    opacity: 0;
+    z-index: 200;
+    opacity: 0.5;
     transform: translateY(-100%);
-    width: 1px;
+    width: 3px;
     height: 100%;
-    background: darken($RUNvert, 20%);
+    background: $RUNwhite;
     // background: $RUNvert;
   }
 }
@@ -60,6 +60,7 @@ background: radial-gradient(circle, rgba(255, 255, 255, 0.592) 39%, #7fba132a 66
     width: 900px;
     img {
       width: 100%;
+      filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.521));
     }
   }
   .bienvenue{
