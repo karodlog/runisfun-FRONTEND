@@ -36,6 +36,16 @@ import Nav from "../../components/navigation/Nav";
 
 gsap.registerPlugin(ScrollToPlugin);
 
+
+
+// @@@@@@@@@@@@@@@@@@@@ animation introduction @@@@@@@@@@@@@@@@@@@@@@
+// les différentes animations se jouent les unes après les autres...
+
+// Mais on peut aussi les faire commencer ensemble ou jouer sur un"timer" qui crée une relation avec l'animation précédente...
+
+// ou l'ajout d'une étiquette (label) qui permet de déclencher des animations ensemble. -> essainav/bienvenue/galerie photos/lettre (label "test")
+
+
 const Home = () => {
   const panel = () => {
     gsap
@@ -111,6 +121,8 @@ const Home = () => {
         "<0.5"
       )
 
+
+      // label "test"
       .to(
         ".essaiNav",
         {
@@ -144,7 +156,6 @@ const Home = () => {
           y: 0,
           duration: 1,
           ease: "back",
-          // ease: "power3.inOut",
           stagger: {
             each: 0.1,
             from: "edges",
@@ -154,6 +165,7 @@ const Home = () => {
       );
   };
 
+  // la fonction "panel" est appelée dans un useEffect
   useEffect(() => {
     panel();
   }, []);

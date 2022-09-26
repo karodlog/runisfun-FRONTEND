@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import SmallNavAccessories from "../../components/smallNav/SmallNavAccessories";
 import { addProduct } from "../../store/actions/panier-actions";
-
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

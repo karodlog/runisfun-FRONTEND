@@ -71,6 +71,7 @@ const ShoesMan = () => {
       <ul className="listCard">
         <BarreFiltreShoes />
         {data
+        // mise en place des filtres pour afficher les card selon les différents critères
             .filter((element) => element.activity.includes(activity))
             .filter((element) => element.promo.includes(promo))
           .map((element, index) => (
